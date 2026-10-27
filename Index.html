@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090d16">
+  <title>Gestão Financeira Familiar</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background: #090d16; }
+    #app { display: block; width: 100%; height: 100%; min-height: 100vh; border: 0; background: #090d16; }
+    #erro { display: none; position: fixed; inset: 0; z-index: 2; padding: 24px; color: #f8fafc; background: #090d16; font: 16px/1.5 system-ui, sans-serif; }
+    #erro strong { display:block; margin-bottom: 8px; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <!-- SUBSTITUA o valor abaixo pela URL de implantação do Apps Script terminada em /exec. -->
+  <iframe
+    id="app"
+    title="Gestão Financeira Familiar"
+    data-src="https://script.google.com/macros/s/AKfycbzETkpEv2p7uD1_irpwWusYqoilNHecQ7JNUb4gcrz0K9WcbPy4up_-ZfmL3RYTVjnu/exec"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="clipboard-read; clipboard-write"
+    allowfullscreen>
+  </iframe>
+  <div id="erro">
+    <strong>Configure o endereço da aplicação</strong>
+    Edite este arquivo e substitua <code>COLE_AQUI_A_URL_DO_WEB_APP_TERMINADA_EM_EXEC</code> pela URL publicada do Apps Script, terminada em <code>/exec</code>.
+  </div>
+  <script>
+    (function () {
+      var frame = document.getElementById('app');
+      var url = frame.getAttribute('data-src') || '';
+      if (/^https:\/\/script\.google\.com\/macros\/s\/[^\s]+\/exec(?:\?.*)?$/.test(url)) {
+        frame.src = url;
+      } else {
+        frame.style.display = 'none';
+        document.getElementById('erro').style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+</html>
